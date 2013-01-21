@@ -1,0 +1,11 @@
+@mixin input-placeholder($selector: "") {
+  @if $experimental-support-for-webkit {
+    #{$selector}::-webkit-input-placeholder { @content; }
+  }
+  @if $experimental-support-for-mozilla {
+    #{$selector}:-moz-placeholder { @content; }
+  }
+  @if $experimental-support-for-microsoft {
+    #{$selector}:-ms-input-placeholder { @content; }
+  }
+}

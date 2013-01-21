@@ -1,0 +1,7 @@
+@mixin text-rendering($val: optimizeLegibility) {
+	-webkit-text-rendering: $val;
+	-moz-text-rendering: $val;
+	-ms-text-rendering: $val;
+	-o-text-rendering: $val;
+	text-rendering: $val;
+}

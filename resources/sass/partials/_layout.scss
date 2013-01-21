@@ -1,0 +1,26 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	line-height: 1.4em;
+	background: #eaeaea url('../images/bg.png');
+	color: #4d4d4d;
+	width: 550px;
+	margin: 0 auto;
+  @include font-smoothing(antialiased);
+}
+
+footer {
+	margin: 65px auto 0;
+	color: #a6a6a6;
+	font-size: 12px;
+  @include text-shadow(rgba(255, 255, 255, 0.7) 0 1px 0);
+	text-align: center;
+  a { color: inherit; }
+}
+
+.hidden { display: none; }

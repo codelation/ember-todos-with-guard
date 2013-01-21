@@ -1,0 +1,23 @@
+javascript_compressor: uglifier
+compress_assets: on
+gzip_assets: off
+
+javascripts:
+  jquery:
+    - vendor/jquery-1.9.0.js
+  ember:
+    - vendor/handlebars-1.0.rc.2.js
+    - vendor/ember-1.0.0-pre.4.js
+    - vendor/ember-data-revision.11.js
+    - vendor/localstorage_adapter.js
+  templates:
+    - temp/templates/**/*.js
+  app:
+    - app/app.js
+    - app/router.js
+  models:
+    - app/models/**/*.js
+  controllers:
+    - app/controllers/**/*.js
+  views:
+    - app/views/**/*.js

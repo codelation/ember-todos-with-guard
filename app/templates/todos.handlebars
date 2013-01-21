@@ -1,0 +1,46 @@
+<div class="todos">
+  <div class="header">
+    <h1>todos</h1>
+    {{view Todos.NewTodoView action="createTodoWithTitle"}}
+  </div>
+
+  {{#if length}}
+    <section class="main">
+      <ul>
+        {{#each todo in filteredContent}}
+          {{#view Todos.TodoItemView todoBinding="todo"}}
+            {{#if view.isEditing}}
+              {{view Todos.EditTodoView todoBinding="todo"}}
+            {{else}}
+              {{view Ember.Checkbox checkedBinding="todo.isCompleted" class="toggle"}}
+              <label>{{todo.title}}</label>
+              <button {{action "deleteTodo" todo}} class="destroy"></button>
+            {{/if}}
+          {{/view}}
+        {{/each}}
+      </ul>
+      {{view Ember.Checkbox checkedBinding="allAreCompleted"}}
+    </section>
+
+    <div class="footer">
+      <span>{{{remainingFormatted}}}</span>
+      <ul>
+        <li>
+          {{#linkTo todos.index}}All{{/linkTo}}
+        </li>
+        <li>
+          {{#linkTo todos.active}}Active{{/linkTo}}
+        </li>
+        <li>
+          {{#linkTo todos.completed}}Completed{{/linkTo}}
+        </li>
+      </ul>
+
+      {{#if hasCompleted}}
+        <button id="clear-completed" {{action "clearCompleted"}} {{bindAttr class="buttonClass:hidden"}} >
+          Clear completed ({{completedCount}})
+        </button>
+      {{/if}}
+    </div>
+  {{/if}}
+</div>
