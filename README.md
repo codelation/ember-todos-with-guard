@@ -3,6 +3,8 @@
 The goal of this project to provide an Ember.js development 
 environment where testing and managing resources is easy.
 
+The blog post: <http://81designs.com/2013/01/24/todomvc-with-ember-js-and-guard/>
+
 ## Features
 
 * Automatically compile/compress:
